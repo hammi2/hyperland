@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Script: clean_temp
+# Purpose: Deletes temporary files and cleans temporary directories.
+
+echo "Starting cleanup process..."
+
+# Define paths
+TEMP_DIR="/tmp"
+CACHE_DIR="$HOME/.cache"
+
+# Remove temporary files
+echo "Cleaning $TEMP_DIR..."
+sudo rm -rf ${TEMP_DIR}/*
+
+echo "Cleaning $CACHE_DIR..."
+rm -rf ${CACHE_DIR}/*
+
+# Optionally clean other directories
+# Uncomment the next line if you want to clean unused packages (requires sudo).
+# sudo pacman -Sc --noconfirm
+
+echo "Temporary files have been cleaned!"
